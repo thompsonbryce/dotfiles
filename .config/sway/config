@@ -1,5 +1,10 @@
+default_border pixel 2
 
-output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.5
+gaps inner 4
+
+output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.25
+
+set $bg ~/Pictures/ZNdtkwC.jpeg
 
 ### Variables
 #
@@ -10,9 +15,11 @@ set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 # Recommends: foot
 set $term foot
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -28,23 +35,19 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /usr/share/backgrounds/default.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+output * bg $bg fill
 
 ### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+
+###timeout 300 'swaylock -f -i $bg' \
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -i $bg' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+bindsym $mod+p exec swaylock -f -i $bg
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
