@@ -1,5 +1,7 @@
 default_border pixel 2
 
+client.focused "#FFFFFF" "#338DFF" "#ffffff" "#FFFFFF"
+
 gaps inner 4
 
 output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.25
