@@ -14,11 +14,11 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
 ### Input configuration
 
-input type:touchpad {
-    tap enabled
-    drag enabled
-    scroll_factor 0.5
-}
+#input type:touchpad {
+#    tap enabled
+#    drag enabled
+#    scroll_factor 0.5
+#}
 
 ### Output configuration
 
@@ -58,6 +58,11 @@ bindsym $mod+p exec swaylock -f -i $bg
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+### Attempt multimedia keys
+
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ 
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 
 #
 # Moving around:
