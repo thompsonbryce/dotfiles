@@ -59,11 +59,6 @@ bindsym $mod+p exec swaylock -f -i $bg
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-### Attempt multimedia keys
-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ 
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-
 #
 # Moving around:
 #
@@ -167,6 +162,4 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bar {
-    swaybar_command waybar
-}
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
