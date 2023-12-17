@@ -26,12 +26,14 @@ sudo dnf install -y \
     gcc-c++ \
     gnome-shell-extension-pop-shell \
     keepass-xc \
-    steam
+    steam \
+    rclone
 
 echo "installing flatpaks"
 flatpak install -y com.discordapp.Discord
 flatpak install -y flathub org.gnome.Extensions
 flatpak install -y flathub org.keepassxc.KeePassXC
+flatpak install -y flathub com.microsoft.AzureStorageExplorer
 
 echo "Configuring tmux tpm"
 git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
@@ -43,3 +45,5 @@ sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 
 echo "Installing ffmpeg"
 sudo dnf -y install ffmpeg --allowerasing
+
+chmod +x ~/dev/tmux-sessionizer
