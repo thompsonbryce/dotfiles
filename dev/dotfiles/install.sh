@@ -12,7 +12,6 @@ sudo dnf install -y \
     git \
     tmux \
     nitrogen \
-    dotnet-sdk-7.0 \
     dotnet-sdk-8.0 \
     htop \
     gimp \
