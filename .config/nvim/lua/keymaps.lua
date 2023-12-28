@@ -24,4 +24,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.keymap.set('n', '<F1>', '<Esc>', {})
+vim.keymap.set({ 'n', 'i', 'v' }, '<F1>', '<Esc>', {})
