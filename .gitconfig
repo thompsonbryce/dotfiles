@@ -4,10 +4,12 @@
 [credential "helperselector"]
 	selected = cache
 [alias]
+	
 	lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=10
 	pushfwl = push --force-with-lease
 	wip = commit -a -m WIP
 	coa = !git add -A && git commit -m
+	cob = checout -b
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
