@@ -25,4 +25,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.keymap.set({ 'n', 'i', 'v' }, '<F1>', '<Esc>', {})
-vim.keymap.set({ 'n', 'i' }, '<leader>e', ':Neotree toggle<CR>')
+vim.keymap.set({ 'n', }, '<leader>e', ':Neotree toggle<CR>')
+vim.keymap.set({ 'n' }, '<leader>pv', ':Ex<CR>')
