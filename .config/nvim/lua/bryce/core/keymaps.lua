@@ -20,4 +20,6 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 keymap.set("n", "<leader>pv", "<cmd>Explore<CR>", { desc = "Open NetRW" })
+

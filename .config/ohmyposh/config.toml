@@ -56,7 +56,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       "{{if gt .Code 0}}red{{end}}",
       "{{if eq .Code 0}}green{{end}}"
     ]
-    template = '$'
+    template = '$ '
 
 [transient_prompt]
   background = 'transparent'

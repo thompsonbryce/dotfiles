@@ -1,29 +1,30 @@
-vim.cmd("let g:netrw_liststyle = 3")
+vim.opt.relativenumber = true
+vim.opt.number = true
 
-local opt = vim.opt
+vim.opt.tabstop = 4 --2 spaces for tabs
+vim.opt.shiftwidth = 4 --indent
+vim.opt.expandtab = true --tabs to spaces
+vim.opt.autoindent = true --copy indent from current line when starting new
 
-opt.relativenumber = true
-opt.number = true
+vim.opt.wrap = false
 
-opt.tabstop = 2 --2 spaces for tabs
-opt.shiftwidth = 2 --indent
-opt.expandtab = true --tabs to spaces
-opt.autoindent = true --copy indent from current line when starting new
+vim.opt.ignorecase = true -- Ignore
+vim.opt.smartcase = true
 
-opt.wrap = false
+vim.opt.cursorline = true
 
-opt.ignorecase = true -- Ignore
-opt.smartcase = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
 
-opt.cursorline = true
+vim.opt.backspace = "indent,eol,start"
 
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
+vim.opt.clipboard:append("unnamedplus")
 
-opt.backspace = "indent,eol,start"
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-opt.clipboard:append("unnamedplus")
+vim.opt.virtualedit = "block"
+vim.opt.inccommand = "split"
 
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.termguicolors = true

@@ -19,7 +19,7 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -U compinit && compinit
 
 autoload -Uz vcs_info
-precmd() { vcs_info }
+precmd(){vcs_info}
 
 zstyle ':vcs_info:git:*' formats '%b '
 
@@ -27,6 +27,10 @@ setopt PROMPT_SUBST
 PROMPT='%F{green}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 bindkey -s ^f "~/dotfiles/scripts/tmux-sessionizer\n"
 bindkey ^H backward-kill-word
+bindkey "^[[3~" delete-char
+bindkey "5~" kill-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/.git'
 alias egrep='egrep --color=auto'
@@ -36,7 +40,8 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alG'
 alias ls='ls --color=auto'
-
+alias azuritelocal='~/dotfiles/scripts/azurite.sh'
+alias voteapi="tmux new-session -s voteapi -c ~/dev/VoteAppSwa/src/Api 'func host start'"
 alias zshrc="nvim ~/.zshrc"
 
 # History
@@ -55,4 +60,6 @@ setopt hist_find_no_dups
 ## Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/robbyrussel.yaml)"
+
+export PATH="$PATH:/opt/azure-functions-cli"
