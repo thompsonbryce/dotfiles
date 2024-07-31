@@ -32,7 +32,7 @@ bindkey "5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/.git'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
