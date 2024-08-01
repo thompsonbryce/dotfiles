@@ -43,6 +43,7 @@ alias ls='ls --color=auto'
 alias azuritelocal='~/dotfiles/scripts/azurite.sh'
 alias voteapi="tmux new-session -s voteapi -c ~/dev/VoteAppSwa/src/Api 'func host start'"
 alias zshrc="nvim ~/.zshrc"
+alias lg="lazygit"
 
 # History
 HISTSIZE=5000
