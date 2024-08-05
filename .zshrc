@@ -1,3 +1,15 @@
+# early, fast invocation of tmux
+# - only if tmux is installed
+# - not in linux ttys
+# - no nested tmux sessions
+if [[ -n ${commands[tmux]} && "$TERM" != "linux" && -z "$TMUX" && "$INSIDE_EMACS" != "vterm" ]]; then
+  if [[ -n "$SSH_AUTH_SOCK" ]]  then
+    tmux set-environment -g SSH_AUTH_SOCK "$SSH_AUTH_SOCK" 2>/dev/null
+  fi
+  tmux new-session -s "${TTY:t}" -t main || tmux attach-session -t "${TTY:t}"
+fi
+
+####################
 # zinit
 
 # Set the directory we want to store zinit and plugins
@@ -31,6 +43,8 @@ bindkey "^[[3~" delete-char
 bindkey "5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+zle -N killp{,}
+bindkey "^[Q" killp
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles'
 alias egrep='egrep --color=auto'
@@ -44,6 +58,13 @@ alias azuritelocal='~/dotfiles/scripts/azurite.sh'
 alias voteapi="tmux new-session -s voteapi -c ~/dev/VoteAppSwa/src/Api 'func host start'"
 alias zshrc="nvim ~/.zshrc"
 alias lg="lazygit"
+
+killp() {
+    local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+    if [[ "$pid" != "" ]]; then
+        echo $pid | xargs sudo kill -${1:-9}
+    fi
+}
 
 # History
 HISTSIZE=5000
