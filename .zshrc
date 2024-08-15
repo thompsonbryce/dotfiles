@@ -45,6 +45,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 zle -N killp{,}
 bindkey "^[Q" killp
+bindkey '^[[Z' autosuggest-accept
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME/dotfiles'
 alias egrep='egrep --color=auto'
