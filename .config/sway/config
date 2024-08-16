@@ -23,7 +23,8 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 ### Output configuration
 
 set $bg ~/Pictures/ZNdtkwC.jpeg
-output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.25
+#output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.25
+output DP-2 res 3440x1440@120.00Hz pos 0,0 scale 1
 output * bg $bg fill
 
 default_border pixel 2

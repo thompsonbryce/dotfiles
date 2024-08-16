@@ -38,7 +38,7 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 PROMPT='%F{green}%n%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 bindkey -s ^f "~/dotfiles/scripts/tmux-sessionizer\n"
-bindkey ^H backward-kill-word
+bindkey '^H' backward-kill-word
 bindkey "^[[3~" delete-char
 bindkey "5~" kill-word
 bindkey "^[[1;5C" forward-word

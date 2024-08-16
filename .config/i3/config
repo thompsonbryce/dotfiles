@@ -186,6 +186,7 @@ bindsym $mod+rffR mode "resize"
 
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always --no-startup-id feh --bg-fill ~/Pictures/2.jpg
+exec_always --no-startup-id xrandr --output DP-2 --mode 3440x1440 --rate 120.00
 
 gaps inner 4px
 default_border pixel 0
