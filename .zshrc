@@ -59,7 +59,7 @@ alias azuritelocal='~/dotfiles/scripts/azurite.sh'
 alias voteapi="tmux new-session -s voteapi -c ~/dev/VoteAppSwa/src/Api 'func host start'"
 alias zshrc="nvim ~/.zshrc"
 alias lg="lazygit"
-
+alias ..="cd .."
 killp() {
     local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
     if [[ "$pid" != "" ]]; then
@@ -85,4 +85,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/robbyrussel.yaml)"
 
+# Path modifications
 export PATH="$PATH:/opt/azure-functions-cli"
