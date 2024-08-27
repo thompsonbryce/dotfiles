@@ -1,21 +1,29 @@
 [user]
-	name = Bryce Thompson
-	email = 9068303+thompsonbryce@users.noreply.github.com
+    name = Bryce Thompson
+    email = 9068303+thompsonbryce@users.noreply.github.com
+[core]
+    editor = vim
 [credential "helperselector"]
-	selected = cache
+    selected = cache
 [alias]
-	lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=10
-	pushfwl = push --force-with-lease
-	wip = commit -a -m WIP
-	coa = !git add -A && git commit -m
-	cob = checout -b
-	resetfile = checkout HEAD --
+    lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=10
+    l = lg -n 1
+    pushfwl = push --force-with-lease
+    wip = !git add . && git commit -a -m WIP
+    coa = !git add -A && git commit -m
+    cob = checout -b
+    resetfile = checkout HEAD --
+    rh1 = reset HEAD~1
+    s = status
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [pager]
-	branch = false
+    branch = false
+[diff]
+    tool = vimdiff
