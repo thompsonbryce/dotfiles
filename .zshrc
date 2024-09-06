@@ -87,3 +87,5 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/robbyrussel.yaml)"
 
 # Path modifications
 export PATH="$PATH:/opt/azure-functions-cli"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.dotnet/tools"
