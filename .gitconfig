@@ -7,7 +7,7 @@
     selected = cache
 [alias]
     lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=10
-    l = lg -n 1
+    last = log -1 HEAD
     pushfwl = push --force-with-lease
     wip = !git add . && git commit -a -m WIP
     coa = !git add -A && git commit -m
@@ -15,7 +15,8 @@
     resetfile = checkout HEAD --
     rh1 = reset HEAD~1
     s = status
-
+    b = "!checkout_fzf() { git branch | fzf | xargs git checkout; }; checkout_fzf"
+    d = "!delete_fzf() { git branch | fzf | xargs git branch -D; }; delete_fzf"
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
