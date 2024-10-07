@@ -1,2 +1,2 @@
-require("bryce.core.options")
-require("bryce.core.keymaps")
+require('bryce.core.keymaps')
+require('bryce.core.options')
