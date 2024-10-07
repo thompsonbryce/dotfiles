@@ -8,7 +8,7 @@ vim.opt.autoindent = true --copy indent from current line when starting new
 
 vim.opt.wrap = false
 
-vim.opt.ignorecase = true -- Ignore
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.cursorline = true
