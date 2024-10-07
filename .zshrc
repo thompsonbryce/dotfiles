@@ -1,14 +1,4 @@
-# early, fast invocation of tmux
-# - only if tmux is installed
-# - not in linux ttys
-# - no nested tmux sessions
-#if [[ -n ${commands[tmux]} && "$TERM" != "linux" && -z "$TMUX" && "$INSIDE_EMACS" != "vterm" ]]; then
-#  if [[ -n "$SSH_AUTH_SOCK" ]]  then
-#    tmux set-environment -g SSH_AUTH_SOCK "$SSH_AUTH_SOCK" 2>/dev/null
-#  fi
-#  tmux new-session -s "${TTY:t}" -t main || tmux attach-session -t "${TTY:t}"
-#fi
-
+eval `keychain --eval --quiet`
 ####################
 # zinit
 
@@ -65,6 +55,9 @@ killp() {
     if [[ "$pid" != "" ]]; then
         echo $pid | xargs sudo kill -${1:-9}
     fi
+}
+sshlogin() {
+  keychain ~/.ssh/id_ed25519
 }
 
 # History
