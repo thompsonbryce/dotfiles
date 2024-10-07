@@ -12,7 +12,13 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = { "smart" },
+        file_ignore_patterns = {
+          "/[Bb]in/",
+          "/[Oo]bj/",
+          ".git/",
+          ".nuget/"
+        },
+        path_display = { "truncate = 3" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,
