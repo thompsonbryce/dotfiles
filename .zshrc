@@ -73,6 +73,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
 ## Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -82,3 +85,4 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/robbyrussel.yaml)"
 export PATH="$PATH:/opt/azure-functions-cli"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:/snap/bin"

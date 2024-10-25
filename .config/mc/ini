@@ -87,7 +87,7 @@ skin=mc46
 
 [Layout]
 output_lines=0
-left_panel_size=60
+left_panel_size=141
 top_panel_size=0
 message_visible=true
 keybar_visible=true

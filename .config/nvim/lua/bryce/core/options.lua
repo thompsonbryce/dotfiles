@@ -14,6 +14,7 @@ vim.opt.smartcase = true
 vim.opt.cursorline = true
 
 vim.opt.termguicolors = true
+
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 
@@ -27,4 +28,3 @@ vim.opt.splitbelow = true
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "split"
 
-vim.opt.termguicolors = true

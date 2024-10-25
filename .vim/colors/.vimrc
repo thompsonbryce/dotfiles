@@ -1,2 +1,2 @@
 set termguicolors
-colorscheme apprentice
+colorscheme onehalfdark_highlight
