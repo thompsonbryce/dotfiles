@@ -1,2 +1,0 @@
-set termguicolors
-colorscheme onehalfdark_highlight
