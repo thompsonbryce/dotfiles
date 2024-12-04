@@ -19,6 +19,7 @@
     b = "!checkout_fzf() { git branch | fzf | xargs git checkout; }; checkout_fzf"
     d = "!delete_fzf() { git branch | fzf | xargs git branch -D; }; delete_fzf"
     pushup = push -u origin HEAD
+    cam = commit --amend --no-edit
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
