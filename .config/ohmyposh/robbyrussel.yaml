@@ -1,42 +1,33 @@
-{
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "blocks": [
-    {
-      "alignment": "left",
-      "segments": [
-        {
-          "foreground": "#98C379",
-          "style": "plain",
-          "template": "\u279c ",
-          "type": "text"
-        },
-        {
-          "foreground": "#56B6C2",
-          "properties": {
-            "style": "full"
-          },
-          "template": " {{ .Path }} ",
-          "type": "path"
-        },
-        {
-          "foreground": "#D0666F",
-          "properties": {
-            "branch_icon": ""
-          },
-          "style": "plain",
-          "template": "<#5FAAE8>(</>{{ .HEAD }}<#5FAAE8>)</>",
-          "type": "git"
-        },
-        {
-          "foreground": "#BF616A",
-          "style": "plain",
-          "template": " \u2717",
-          "type": "status"
-        }
-      ],
-      "type": "prompt"
-    }
-  ],
-  "final_space": true,
-  "version": 2
-}
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: ""
+    foreground: "#98C379"
+    type: text
+    style: plain
+  - properties:
+      cache_duration: none
+      style: full
+    template: " {{ .Path }} "
+    foreground: "#56B6C2"
+    type: path
+  - properties:
+      branch_icon: ""
+      cache_duration: none
+    template: "<#5FAAE8>(</>{{ .HEAD }}<#5FAAE8>)</>"
+    foreground: "#D0666F"
+    type: git
+    style: plain
+  - properties:
+      cache_duration: none
+    template: " ✗"
+    foreground: "#BF616A"
+    type: status
+    style: plain
+version: 3
+final_space: true
