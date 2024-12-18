@@ -44,9 +44,10 @@ alias grep='grep --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alG'
-alias ls='ls --color=auto'
+alias ls='ls --color'
 alias azuritelocal='~/dotfiles/scripts/azurite.sh'
 alias voteapi="tmux new-session -s voteapi -c ~/dev/VoteAppSwa/src/Api 'func host start'"
+alias voteapp="tmuxifier load-session voteapp"
 alias zshrc="nvim ~/.zshrc"
 alias lg="lazygit"
 alias ..="cd .."
@@ -78,11 +79,14 @@ bindkey '^n' history-search-forward
 
 ## Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Path modifications
 export PATH="$PATH:/opt/azure-functions-cli"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:/snap/bin"
+export PATH="$PATH:$HOME/.tmuxifier/bin"
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/robbyrussel.yaml)"
+eval "$(fzf --zsh)"
