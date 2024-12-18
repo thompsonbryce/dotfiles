@@ -20,8 +20,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5 && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -36,7 +36,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -135,10 +135,15 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [class="firefox"] $ws1
-assign [class="Code"] $ws2
-assign [class="obs"] $ws3
 assign [class="discord"] $ws4
+
+for_window [class="pavucontrol"] floating enable
+for_window [class="Evolution-alarm-notify"] floating enable
+
+exec "spotify - class spotifysp"
+for_window [class="spotifysp"] , move scratchpaad
+bindsym $mod+F7 [instance="spot"] scratchpad show
+bindsym $mod+esc scratchpad move
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -179,15 +184,29 @@ bindsym $mod+minus scratchpad show
 
 bindsym $mod+rffR mode "resize"
 
-# bar 
-# {
-#         status_command i3status
-# }
+#bar 
+#{
+#        status_command i3status
+#}
 
 exec_always --no-startup-id ~/.config/i3/polybar.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/2.jpg
-exec_always --no-startup-id xrandr --output DP-2 --mode 3440x1440 --rate 120.00
+exec_always --no-startup-id feh --bg-fill ~/Pictures/4.jpg
+exec_always --no-startup-id xrandr --output DP-4 --mode 3440x1440 --rate 120.00
 
 gaps inner 4px
-default_border pixel 0
-default_floating_border pixel 0
+gaps left 440px
+gaps right 440px
+smart_gaps inverse_outer
+default_border pixel 4
+default_floating_border pixel 4
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #a6da95
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+exec --no-startup-id nm-applet

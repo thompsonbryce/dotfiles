@@ -6,7 +6,7 @@ set $down j
 set $up k
 set $right l
 
-set $term foot
+set $term kitty
 
 set $rofi_cmd rofi -terminal '$term'
 
@@ -24,12 +24,15 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
 set $bg ~/Pictures/ZNdtkwC.jpeg
 #output eDP-1 res 2560x1440@59.998Hz pos 0,0 scale 1.25
-output DP-2 res 3440x1440@120.00Hz pos 0,0 scale 1
+output DP-3 res 3440x1440@120.00Hz pos 0,0 scale 1
 output * bg $bg fill
 
 default_border pixel 2
 client.focused "#FFFFFF" "#338DFF" "#ffffff" "#FFFFFF"
 gaps inner 4
+gaps left 400px
+gaps right 400px
+smart_gaps inverse_outer
 
 ### Idle configuration
 
