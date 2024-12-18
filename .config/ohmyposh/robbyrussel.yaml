@@ -6,7 +6,7 @@ blocks:
   segments:
   - properties:
       cache_duration: none
-    template: ""
+    template: "➜ "
     foreground: "#98C379"
     type: text
     style: plain
